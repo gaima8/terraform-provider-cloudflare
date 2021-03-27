@@ -41,7 +41,7 @@ func resourceCloudflareCustomHostname() *schema.Resource {
 			},
 			"ssl": {
 				Type:     schema.TypeList,
-				Required: true,
+				Optional: true,
 				Elem: &schema.Resource{
 					SchemaVersion: 1,
 					Schema: map[string]*schema.Schema{
