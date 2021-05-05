@@ -271,21 +271,6 @@ func resourceCloudflareCustomHostnameImport(d *schema.ResourceData, meta interfa
 func buildCustomHostname(d *schema.ResourceData) cloudflare.CustomHostname {
 	return cloudflare.CustomHostname{
 		Hostname:           d.Get("hostname").(string),
-		CustomOriginServer: d.Get("custom_origin_server").(string),
-		SSL: cloudflare.CustomHostnameSSL{
-			Method:            d.Get("ssl.0.method").(string),
-			Type:              d.Get("ssl.0.type").(string),
-			Wildcard:          d.Get("ssl.0.wildcard").(bool),
-			CnameTarget:       d.Get("ssl.0.cname_target").(string),
-			CnameName:         d.Get("ssl.0.cname_name").(string),
-			CustomCertificate: d.Get("ssl.0.custom_certificate").(string),
-			CustomKey:         d.Get("ssl.0.custom_key").(string),
-			Settings: cloudflare.CustomHostnameSSLSettings{
-				HTTP2:         d.Get("ssl.0.settings.0.http2").(string),
-				TLS13:         d.Get("ssl.0.settings.0.tls13").(string),
-				MinTLSVersion: d.Get("ssl.0.settings.0.min_tls_version").(string),
-				Ciphers:       expandInterfaceToStringList(d.Get("ssl.0.settings.0.ciphers").([]interface{})),
-			},
-		},
+		CustomOriginServer: d.Get("custom_origin_server").(string)
 	}
 }
