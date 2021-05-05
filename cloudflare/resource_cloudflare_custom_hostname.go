@@ -271,6 +271,6 @@ func resourceCloudflareCustomHostnameImport(d *schema.ResourceData, meta interfa
 func buildCustomHostname(d *schema.ResourceData) cloudflare.CustomHostname {
 	return cloudflare.CustomHostname{
 		Hostname:           d.Get("hostname").(string),
-		CustomOriginServer: d.Get("custom_origin_server").(string)
+		CustomOriginServer: d.Get("custom_origin_server").(string),
 	}
 }
