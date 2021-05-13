@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"testing"
 
-	cloudflare "github.com/cloudflare/cloudflare-go"
+	cloudflare "github.com/gaima8/cloudflare-go"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/resource"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"

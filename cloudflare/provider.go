@@ -6,7 +6,7 @@ import (
 	"os"
 	"regexp"
 
-	cloudflare "github.com/cloudflare/cloudflare-go"
+	cloudflare "github.com/gaima8/cloudflare-go"
 	"github.com/cloudflare/terraform-provider-cloudflare/version"
 	cleanhttp "github.com/hashicorp/go-cleanhttp"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/logging"

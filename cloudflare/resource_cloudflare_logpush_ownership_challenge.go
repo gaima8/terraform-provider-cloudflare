@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/cloudflare/cloudflare-go"
+	"github.com/gaima8/cloudflare-go"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 )
 

@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/cloudflare/cloudflare-go"
+	"github.com/gaima8/cloudflare-go"
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 	"github.com/pkg/errors"
 
