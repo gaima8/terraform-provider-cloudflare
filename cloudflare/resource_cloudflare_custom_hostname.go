@@ -213,7 +213,7 @@ func resourceCloudflareCustomHostnameDelete(d *schema.ResourceData, meta interfa
 
 	err := client.DeleteCustomHostname(context.Background(), zoneID, hostnameID)
 	if err != nil {
-		return errors.Wrap(err, "failed to delete custom hostname certificate")
+		return errors.Wrap(err, fmt.Sprintf("failed to delete custom hostname %q", hostnameID))
 	}
 
 	return nil
@@ -227,7 +227,7 @@ func resourceCloudflareCustomHostnameCreate(d *schema.ResourceData, meta interfa
 
 	newCertificate, err := client.CreateCustomHostname(context.Background(), zoneID, certificate)
 	if err != nil {
-		return errors.Wrap(err, "failed to create custom hostname certificate")
+		return errors.Wrap(err, fmt.Sprintf("failed to create custom hostname %q", certificate.Hostname))
 	}
 
 	d.SetId(newCertificate.Result.ID)
@@ -243,7 +243,7 @@ func resourceCloudflareCustomHostnameUpdate(d *schema.ResourceData, meta interfa
 
 	_, err := client.UpdateCustomHostname(context.Background(), zoneID, hostnameID, certificate)
 	if err != nil {
-		return errors.Wrap(err, "failed to update custom hostname certificate")
+		return errors.Wrap(err, fmt.Sprintf("failed to update custom hostname %q, with ID %q", certificate.Hostname, hostnameID))
 	}
 
 	return resourceCloudflareCustomHostnameRead(d, meta)
